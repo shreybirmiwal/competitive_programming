@@ -1,0 +1,15 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> List[int]:
+
+        quantities = {}
+        out = []
+
+        for num in nums:
+            quantities[num] = quantities.get(num, 0) + 1
+
+        for quants in quantities:
+            if quantities[quants] > (len(nums)/3):
+                out.append(quants)
+
+        return out
+        
